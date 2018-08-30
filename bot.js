@@ -40,14 +40,14 @@ client.on('message', (message) => {
                 break;
             case 'lunch':
                 const randomLunchSpot = lunchspots[Math.floor(Math.random()*lunchspots.length)];
-                let message = `Random Lunch Spot: ${randomLunchSpot.Name}`;
+                let _message = `Random Lunch Spot: ${randomLunchSpot.Name}`;
                 if (randomLunchSpot["Web Page"]) {
-                    message += ` (${randomLunchSpot["Web Page"]})`
+                    _message += ` (${randomLunchSpot["Web Page"]})`
                 }
                 if (randomLunchSpot.Location) {
-                    message += ` @ ${randomLunchSpot.Location}`
+                    _message += ` @ ${randomLunchSpot.Location}`
                 }
-                message.channel.send(message)
+                message.channel.send(_message)
         }
     }
 })
