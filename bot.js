@@ -41,11 +41,10 @@ client.on('message', (message) => {
             case 'lunch':
                 console.log('finding lunch spot');
                 const randomLunchSpot = lunchspots[Math.floor(Math.random()*lunchspots.length)];
-                let _name = randomLunchSpot.Name;
-                if (cmd.toLowerCase === 'lernch') {
-                    _name = translate(_name);
+                let _message = `Random Lunch Spot: ${randomLunchSpot.Name}`;
+                if (cmd.toLowerCase() === 'lernch') {
+                    _message = translate(_message);
                 }
-                let _message = `Random Lunch Spot: ${_name}`;
                 if (randomLunchSpot["Web Page"]) {
                     _message += ` (${randomLunchSpot["Web Page"]})`
                 }
