@@ -32,8 +32,13 @@ client.on('message', (message) => {
                 args = args.join(' ');
                 console.log('translating: ' + args);
                 const translation = translate(args);
+
+                let tts = cmd.toLowerCase() === 'tts';
+                if (tts) {
+                    translation = translation.toLowerCase();
+                }
                 message.channel.send(`[${message.author.username}] ${translation}`, {
-                    tts: cmd.toLowerCase() === 'tts'
+                    tts
                 })
                     .then(sent => console.log(`Sent Message: ${sent.content}`))
                     .then(() => message.delete())
