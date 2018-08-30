@@ -32,7 +32,7 @@ client.on('message', (message) => {
         switch(cmd.toLowerCase()) {
             case 'translate':
                 const translation = translate(args);
-                message.channel.send(`[${message.username}] ${tranlation}`)
+                message.channel.send(`[${message.username}] ${translation}`)
                     .then(sent => console.log(`Sent Message: ${sent.content}`))
                     .then(() => message.delete())
                     .catch(console.error);
