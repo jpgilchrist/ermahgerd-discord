@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const winston = require('winston')
-const auth = require('./auth.json')
 const translate = require('node-ermahgerd').translate;
 const lunchspots = require('./lunch-store');
 
