@@ -57,5 +57,5 @@ client.on('message', (message) => {
     }
 })
 
-client.login(auth.token)
+client.login(process.env.DISCORD_TOKEN)
 
