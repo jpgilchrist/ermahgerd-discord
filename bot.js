@@ -23,15 +23,14 @@ client.on('ready', (evt) => {
 
 client.on('message', (message) => {
     const {content} = message
-    console.log('Received Message: ' + content)
     if (content.substring(0,1) === '!') {
         let args = content.substring(1).split(' ')
         const cmd = args[0]
-        console.log('Received Command: ' + cmd)
         args = args.splice(1);
-        args = args.join(' ');
         switch(cmd.toLowerCase()) {
             case 'translate':
+                args = args.join(' ');
+                console.log('translating: ' + args);
                 const translation = translate(args);
                 message.channel.send(`[${message.author.username}] ${translation}`)
                     .then(sent => console.log(`Sent Message: ${sent.content}`))
@@ -40,6 +39,7 @@ client.on('message', (message) => {
                 break;
             case 'lernch':
             case 'lunch':
+                console.log('finding lunch spot');
                 const randomLunchSpot = lunchspots[Math.floor(Math.random()*lunchspots.length)];
                 let _name = randomLunchSpot.Name;
                 if (cmd.toLowerCase === 'lernch') {
@@ -53,6 +53,7 @@ client.on('message', (message) => {
                     _message += ` @ ${randomLunchSpot.Location}`
                 }
                 message.channel.send(_message)
+                break;
         }
     }
 })
