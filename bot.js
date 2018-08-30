@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const winston = require('winston')
 const auth = require('./auth.json')
 const translate = require('node-ermahgerd').translate;
+const lunchspots = require('./lunch-store');
 
 const logger = winston.createLogger({
     level: 'debug',
@@ -37,6 +38,16 @@ client.on('message', (message) => {
                     .then(() => message.delete())
                     .catch(console.error);
                 break;
+            case 'lunch':
+                const randomLunchSpot = lunchspots[Math.floor(Math.random()*lunchspots.length)];
+                let message = `Random Lunch Spot: ${randomLunchSpot.Name}`;
+                if (randomLunchSpot["Web Page"]) {
+                    message += ` (${randomLunchSpot["Web Page"]})`
+                }
+                if (randomLunchSpot.Location) {
+                    message += ` @ ${randomLunchSpot.Location}`
+                }
+                message.channel.send(message)
         }
     }
 })
