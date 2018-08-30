@@ -38,9 +38,14 @@ client.on('message', (message) => {
                     .then(() => message.delete())
                     .catch(console.error);
                 break;
+            case 'lernch':
             case 'lunch':
                 const randomLunchSpot = lunchspots[Math.floor(Math.random()*lunchspots.length)];
-                let _message = `Random Lunch Spot: ${randomLunchSpot.Name}`;
+                let _name = randomLunchSpot.Name;
+                if (cmd.toLowerCase === 'lernch') {
+                    _name = translate(_name);
+                }
+                let _message = `Random Lunch Spot: ${_name}`;
                 if (randomLunchSpot["Web Page"]) {
                     _message += ` (${randomLunchSpot["Web Page"]})`
                 }
