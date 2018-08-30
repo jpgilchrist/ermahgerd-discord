@@ -34,6 +34,7 @@ client.on('message', (message) => {
                 const translation = translate(args);
                 message.channel.send(translation)
                     .then(sent => console.log(`Sent Message: ${sent.content}`))
+                    .then(() => message.delete())
                     .catch(console.error);
                 break;
         }
