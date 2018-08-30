@@ -31,8 +31,7 @@ client.on('message', (message) => {
             case 'translate':
                 args = args.join(' ');
                 console.log('translating: ' + args);
-                const translation = translate(args);
-
+                let translation = translate(args);
                 let tts = cmd.toLowerCase() === 'tts';
                 if (tts) {
                     translation = translation.toLowerCase();
