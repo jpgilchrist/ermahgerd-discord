@@ -1,0 +1,16 @@
+{
+  "name": "ermahgerd-discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "node-ermahgerd": "https://github.com/jpgilchrist/node-ermahgerd",
+    "winston": "^3.0.0"
+  }
+}
