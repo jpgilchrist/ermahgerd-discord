@@ -102,6 +102,12 @@ module.exports = [
     "Comments": ""
   },
   {
+    "Name": "Garden Catering",
+    "Location": "930 Chapel St, New Haven, CT 06510, USA",
+    "Web Page": "https://www.gardencatering.com/location/new-haven",
+    "Comments": ""
+  },
+  {
     "Name": "Good Nature Market",
     "Location": "44 Whitney Ave, New Haven, CT 06510, USA",
     "Web Page": "",
